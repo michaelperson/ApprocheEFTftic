@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class PremiereMigration2 : Migration
+    public partial class PremiereMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,7 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_T_Joueur", x => x.IdJoueur);
-                    table.CheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%");
+                    table.CheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%'");
                 });
 
             migrationBuilder.CreateIndex(

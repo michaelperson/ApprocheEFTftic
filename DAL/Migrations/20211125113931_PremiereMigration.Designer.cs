@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211125112500_PremiereMigration3")]
-    partial class PremiereMigration3
+    [Migration("20211125113931_PremiereMigration")]
+    partial class PremiereMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,7 +53,7 @@ namespace DAL.Migrations
 
                     b.ToTable("T_Joueur");
 
-                    b.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%");
+                    b.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%'");
                 });
 #pragma warning restore 612, 618
         }

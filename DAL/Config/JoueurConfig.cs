@@ -22,7 +22,7 @@ namespace DAL.Config
             builder.Property(j => j.IdJoueur).ValueGeneratedOnAdd();
 
             //Ajoutons une contrainte sur l'email
-            builder.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%");
+            builder.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%'");
 
             //Contrainte d'unicité
             builder.HasIndex(x => x.Email).HasDatabaseName("UK_Email").IsUnique(true);

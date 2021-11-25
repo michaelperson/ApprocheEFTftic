@@ -51,7 +51,7 @@ namespace DAL.Migrations
 
                     b.ToTable("T_Joueur");
 
-                    b.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%");
+                    b.HasCheckConstraint("CK_EmailVerification", "Email like '__%@__%.__%'");
                 });
 #pragma warning restore 612, 618
         }
