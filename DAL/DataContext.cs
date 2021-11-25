@@ -13,6 +13,7 @@ namespace DAL
     {
         #region DBSet
            public DbSet<Joueur> Joueurs { get; set; } //accès à un "repository" (Add,...) + la collection de données
+        public DbSet<Jeux> Jeux { get; set; }
         #endregion
 
         /// <summary>
@@ -34,8 +35,12 @@ namespace DAL
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //Ajout de la config pour Joueur
-            JoueurConfig Jc = new JoueurConfig();
-            Jc.Configure(builder.Entity<Joueur>());
+            new JoueurConfig().Configure(builder.Entity<Joueur>());
+            //Ajout de la config pour Jeux
+            new JeuxConfig().Configure(builder.Entity<Jeux>());
+
+            
+            
         }
 
 
