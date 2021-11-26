@@ -11,5 +11,12 @@ namespace DAL.Entities
         public int IdJeux { get; set; }
         public string Nom { get; set; }
         public double Score { get; set; }
+
+
+        #region Nav Properties
+            public IEnumerable<JeuxJoueur> JeuxJ { get; set; }
+        #endregion
+
+       
     }
 }

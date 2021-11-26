@@ -24,5 +24,9 @@ namespace DAL.Entities
             
             } 
        }
+
+        public List<JeuxJoueur> JoueursJ { get; set; }
+
+        
     }
 }

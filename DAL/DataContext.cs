@@ -34,13 +34,15 @@ namespace DAL
         /// <param name="model"></param>
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //Ajout de la config pour Joueur
-            new JoueurConfig().Configure(builder.Entity<Joueur>());
-            //Ajout de la config pour Jeux
-            new JeuxConfig().Configure(builder.Entity<Jeux>());
+            ////Ajout de la config pour Joueur
+            //new JoueurConfig().Configure(builder.Entity<Joueur>());
+            ////Ajout de la config pour Jeux
+            //new JeuxConfig().Configure(builder.Entity<Jeux>());
 
-            
-            
+            builder.ApplyConfiguration(new JoueurConfig());
+            builder.ApplyConfiguration(new JeuxConfig());
+            builder.ApplyConfiguration(new JeuxJoueurConfig());
+
         }
 
 
